@@ -1,6 +1,7 @@
 FROM node:16
 WORKDIR /app
 COPY . .
-RUN npm install --production
+RUN npm install
+RUN npm run build
 ENV NODE_ENV production
 CMD ["npm", "run", "start"]

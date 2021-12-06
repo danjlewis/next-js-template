@@ -1,11 +1,8 @@
 import React from 'react';
-import SelfDisablingButton from '../components/SelfDisablingButton';
-import styles from '../styles/index.module.css';
+import Button from '../components/Button';
 
 export default function Index() {
-    return (
-        <div>
-            <SelfDisablingButton className={styles.button} variant='contained' delay={1000}>Click me!</SelfDisablingButton>
-        </div>
-    );
+    const [disabled, setDisabled] = React.useState(false);
+    
+    return <Button className='w-32 p-1' onClick={() => {setDisabled(true); setTimeout(setDisabled, 2000, false)}} disabled={disabled}>Click me!</Button>;
 }

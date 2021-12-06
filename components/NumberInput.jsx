@@ -1,0 +1,3 @@
+export default function NumberInput(props) {
+    return <input className={`w-48 h-8 m-2 p-2 ${props.disabled ? 'bg-gray-100 dark:bg-gray-700' : 'bg-gray-50 dark:bg-gray-900'} rounded-md focus:outline-none border-2 ${props.error ? 'border-red-500' : 'border-gray-900 dark:border-gray-50 border-opacity-0 focus:border-opacity-100'} ${props.readOnly ? 'cursor-default' : ''} ${props.disabled ? 'cursor-not-allowed' : ''} ${props.className ?? ''}`} type='number' name={props.name} value={props.value} placeholder={props.placeholder} min={props.min} max={props.max} step={props.step} readOnly={props.readOnly} onInput={props.onInput} disabled={props.disabled} />
+}

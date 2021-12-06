@@ -1,5 +1,3 @@
-import MuiButton from '@mui/material/Button';
-
 export default function Button(props) {
-    return <MuiButton {...props} disableElevation />;
+    return <div className={`min-w-8 min-h-8 m-2 px-4 pt-1 ${props.disabled || props.loading ? 'text-gray-100 dark:text-gray-600 bg-gray-700 dark:bg-gray-100' : 'text-gray-50 hover:text-white dark:text-gray-800 dark:hover:text-gray-900 bg-gray-900 hover:bg-gray-800 dark:bg-gray-50 dark:hover:bg-gray-100'} rounded-md transition-colors duration-200 ${props.disabled ? 'cursor-not-allowed' : (props.loading ? 'cursor-wait' : 'cursor-pointer')} text-center align-middle ${props.className ?? ''}`} onClick={props.disabled || props.loading ? () => null : props.onClick}>{props.loading ? props.loadingText ?? 'Loading...' : props.children}</div>;
 }
